@@ -1,0 +1,17 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      loaded="mainPageLoaded">
+  <DockLayout stretchLastChild="true">
+    <Label dock="top"
+           height="100px"
+           text="Welcome to Jorden Lowe's Blog App" />
+  	<ListView dock="top"
+              itemTap="onTap"
+              items="{{mainOptions}}">
+      <ListView.itemTemplate >
+        <Label horizontalAlignment="stretch"
+               text="{{text}}"
+               height="50px" />
+      </ListView.itemTemplate>
+    </ListView>
+  </DockLayout>
+</Page>

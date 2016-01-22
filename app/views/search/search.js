@@ -7,7 +7,7 @@ var list = require("../../shared/displayList.js");
 
 exports.search = function() {
 	var url = "http://www.jordenlowe.com/api/articles?q="+pageData.get('txtKeyword');
-	list.LoadList(url, articles, function(item){ return item.Title; });
+	list.LoadList(url, articles);
 };
 
 exports.searchPageLoaded = function (args) {

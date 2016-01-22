@@ -1,8 +1,13 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="latestPageLoaded">
   <DockLayout stretchLastChild="true">
-    <ListView dock="top" items="{{articles}}">
+    <ListView dock="top" items="{{articles}}" itemTap="detail">
 	    <ListView.itemTemplate>
-	        <Label horizontalAlignment="stretch" height="50px" text="{{text}}" />
+            <GridLayout columns="*, auto" rows="auto, *" >
+               <Button   row="0" col="1" text="+" tap="hideSummary" visibility="{{ showDetails ? 'visible' : 'collapsed' }}" />
+  	           <Label    row="0" col="0" text="{{Title}}" height="50" />
+               <TextView row="1" col="0" colSpan="2" text="{{Summary}}"
+                         wordWrap="true" id="summary" visibility="{{ showDetails ? 'visible' : 'collapsed' }}" />
+            </GridLayout>
 	    </ListView.itemTemplate>
     </ListView>
   </DockLayout>

@@ -13,5 +13,5 @@ exports.projectPageLoaded = function (args) {
     page.bindingContext = pageData;
 
   	var url = "http://www.jordenlowe.com/api/articles?category=Project";
-		list.LoadList(url, articles, function(item){ return item.Title; });
+		list.LoadList(url, articles);
 };

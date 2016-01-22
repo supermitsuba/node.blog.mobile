@@ -2,7 +2,8 @@
   <DockLayout stretchLastChild="true">
     <ListView dock="top" items="{{events}}">
 	    <ListView.itemTemplate>
-	        <Label horizontalAlignment="stretch" height="50px" text="{{text}}" />
+	        <Label horizontalAlignment="stretch"
+                 height="50px" text="{{EventDate + ': ' + EventName}}" />
 	    </ListView.itemTemplate>
     </ListView>
   </DockLayout>

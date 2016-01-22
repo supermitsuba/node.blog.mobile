@@ -13,5 +13,5 @@ exports.eventPageLoaded = function (args) {
     page.bindingContext = pageData;
 
     var url = "http://www.jordenlowe.com/api/events";
-		list.LoadList(url, events, function(item){ return item.EventDate + ': ' + item.EventName; });
+		list.LoadList(url, events);
 };

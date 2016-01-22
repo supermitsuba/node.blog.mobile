@@ -2,7 +2,7 @@
   <DockLayout stretchLastChild="true">
     <ListView dock="top" items="{{categories}}">
 	    <ListView.itemTemplate>
-	        <Label horizontalAlignment="stretch" height="50px" text="{{text}}" />
+	        <Label horizontalAlignment="stretch" height="50px" text="{{CategoryType}}" />
 	    </ListView.itemTemplate>
     </ListView>
   </DockLayout>

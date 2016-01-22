@@ -13,5 +13,5 @@ exports.categoryPageLoaded = function (args) {
     page.bindingContext = pageData;
 
     var url = "http://www.jordenlowe.com/api/categories";
-		list.LoadList(url, categories, function(item){ return item.CategoryType; });
+		list.LoadList(url, categories);
 };

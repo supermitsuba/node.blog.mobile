@@ -4,7 +4,7 @@
     <Button dock="top" text="Search" height="50px" style="background-color:green;width:300px;border:none;font-size:20px;" tap="search" />
     <ListView dock="top" items="{{articles}}">
 	    <ListView.itemTemplate>
-	        <Label horizontalAlignment="stretch" height="50px" text="{{text}}" />
+	        <Label horizontalAlignment="stretch" height="50px" text="{{Title}}" />
 	    </ListView.itemTemplate>
     </ListView>
   </DockLayout>

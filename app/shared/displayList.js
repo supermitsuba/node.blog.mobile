@@ -1,26 +1,17 @@
 var http = require("http");
 
-var func = null;
 var list = null;
 var length = 0;
 
-function receivedArticles(items) {
+function receivedItems(items) {
 
 	for(var i = 0; i < length; i ++){
 		list.pop();
 	}
 
 	for(var i =0; i < items.length; i++) {
-      var display = "";
-      if(func) {
-        display = func(items[i]);
-      }
-      else {
-        display = items[i].toString();
-      }
-			list.push({
-				text: display
-			});
+		  items[i].showDetails = false;
+			list.push(items[i]);
   }
 
 	length = items.length;
@@ -30,8 +21,7 @@ function receivedError(e) {
 		console.log('Error: '+e);
 }
 
-exports.LoadList = function(url, observable, funcForPropertyToLoad) {
-  func = funcForPropertyToLoad;
+exports.LoadList = function(url, observable) {
   list = observable;
-  http.getJSON(url).then(receivedArticles, receivedError);
+  http.getJSON(url).then(receivedItems, receivedError);
 }

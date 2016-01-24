@@ -13,7 +13,7 @@ exports.search = function() {
 
 exports.searchPageLoaded = function (args) {
     page = args.object;
-		if(page.navigationContext.CategoryType && page.navigationContext.CategoryType.length > 0)
+		if(page.navigationContext && page.navigationContext.CategoryType && page.navigationContext.CategoryType.length > 0)
 		{
 			var url = "http://www.jordenlowe.com/api/articles?category=" + page.navigationContext.CategoryType;
 			list.LoadList(url, articles);

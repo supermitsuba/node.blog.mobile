@@ -25,3 +25,24 @@ exports.LoadList = function(url, observable) {
   list = observable;
   http.getJSON(url).then(receivedItems, receivedError);
 }
+
+exports.expandDetail = function(args) {
+	var item = args.view;
+	var index = args.index;
+	list.getItem(args.index).showDetails = !list.getItem(args.index).showDetails;
+	item.parent.refresh();
+}
+
+exports.viewArticle = function(args) {
+	var page = args.object;
+	var id = page['data-articleId'];
+
+	var navigationEntry = {
+	      moduleName : "views/articles/articles",
+	      context : {
+	              id : id
+	      }
+	};
+
+	page.parent.parent.parent.parent.frame.navigate(navigationEntry);
+}

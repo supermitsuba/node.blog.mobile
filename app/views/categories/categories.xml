@@ -1,6 +1,6 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="categoryPageLoaded">
   <DockLayout stretchLastChild="true">
-    <ListView dock="top" items="{{categories}}">
+    <ListView dock="top" items="{{categories}}" itemTap="viewArticles">
 	    <ListView.itemTemplate>
 	        <Label horizontalAlignment="stretch" height="50px" text="{{CategoryType}}" />
 	    </ListView.itemTemplate>

@@ -15,3 +15,7 @@ exports.projectPageLoaded = function (args) {
   	var url = "http://www.jordenlowe.com/api/articles?category=Project";
 		list.LoadList(url, articles);
 };
+
+exports.detail = list.expandDetail;
+
+exports.viewArticle = list.viewArticle;

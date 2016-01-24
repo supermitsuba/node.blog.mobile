@@ -2,9 +2,20 @@
   <DockLayout stretchLastChild="true">
     <TextField dock="top" text="{{txtKeyword}}" width="300px" height="50px" hint="search keyword" />
     <Button dock="top" text="Search" height="50px" style="background-color:green;width:300px;border:none;font-size:20px;" tap="search" />
-    <ListView dock="top" items="{{articles}}">
+    <ListView dock="top" items="{{articles}}" itemTap="detail">
 	    <ListView.itemTemplate>
-	        <Label horizontalAlignment="stretch" height="50px" text="{{Title}}" />
+        <GridLayout columns="*, auto" rows="*, *, *" horizontalAlignment="left" style="min-height: 35 px" >
+           <Label    row="0" col="0" text="{{Title}}" style="font-size: 20 px" height="50px"/>
+           <Button   row="0" col="1" text="View" tap="viewArticle" style="font-size: 20 px"
+                     visibility="{{ showDetails ? 'visible' : 'collapsed' }}"
+                     data-articleId="{{ Id }}" />
+           <Label    row="1" col="0" colSpan="2" text="{{ 'Date: ' + DateOfArticle }}"
+                     style="font-size: 14 px"
+                     visibility="{{ showDetails ? 'visible' : 'collapsed' }}" />
+
+           <TextView row="2" col="0" colSpan="2" text="{{Summary}}" style="font-size: 14 px"
+                     wordWrap="true" id="summary" visibility="{{ showDetails ? 'visible' : 'collapsed' }}" />
+        </GridLayout>
 	    </ListView.itemTemplate>
     </ListView>
   </DockLayout>

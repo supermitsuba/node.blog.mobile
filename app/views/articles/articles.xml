@@ -1,2 +1,16 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="articleLoaded">
+    <StackLayout style="min-height: 35 px" >
+
+      <Label    text="{{ article.Title }}"
+                style="font-size: 14 px" />
+
+      <Label    text="{{ 'Date: ' + article.DateOfArticle }}" horizontalAlignment="left"
+                style="font-size: 14 px" />
+      <Label    text="{{ article.CategoryType }}" horizontalAlignment="right"
+                style="font-size: 14 px" />
+
+      <TextView text="{{ article.Post }}"
+                style="font-size: 14 px" wordWrap="true" />
+    </StackLayout>
+
 </Page>

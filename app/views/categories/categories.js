@@ -15,3 +15,18 @@ exports.categoryPageLoaded = function (args) {
     var url = "http://www.jordenlowe.com/api/categories";
 		list.LoadList(url, categories);
 };
+
+exports.viewArticles = function(args) {
+	var page = args.object;
+	var index = args.index;
+  var category = categories.getItem(args.index).CategoryType;
+
+	var navigationEntry = {
+	      moduleName : "views/search/search",
+	      context : {
+	              CategoryType : category
+	      }
+	};
+
+	page.parent.parent.frame.navigate(navigationEntry);
+}
